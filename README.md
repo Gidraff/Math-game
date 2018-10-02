@@ -1,1 +1,1 @@
-# Introduction to Reactjs through a simple Math game
+### Introduction to Reactjs through a simple Math game
