@@ -4,7 +4,10 @@ const Button = (props) => {
 	let button;
   switch(props.answerIsCorrect){
   	case true:
-    	button = <button className="btn btn-success" onClick={props.acceptAnswer}>
+    	button =
+			<button
+				className="btn btn-success"
+				onClick={props.acceptAnswer}>
 				<i className="fa fa-check"></i>
       </button>
       break;
@@ -14,17 +17,22 @@ const Button = (props) => {
       </button>
     	break;
     default:
-    	button = <button className="btn" onClick={props.checkAnswer}
-      								disabled={props.selectedNumbers.length === 0}>
-				=
-      </button>
+    	button =
+				<button
+					className="btn"
+					onClick={props.checkAnswer}
+      		disabled={props.selectedNumbers.length === 0}>
+					=
+      	</button>
       break;
   }
 	return (
   	<div className="col-2">
   	  {button}
       <br/>
-      <button className="btn btn-warning btn-sm" onClick={props.redraw}
+      <button
+				className="btn btn-warning btn-sm"
+				onClick={props.redraw}
       	disabled={props.redraws === 0}>
         <i className="fa fa-sync"></i> {props.redraws}
       </button>

@@ -47,7 +47,9 @@ export default class Game extends React.Component {
   resetGame = () => this.setState(Game.initialState());
 
   selectNumber = (clickedNumber) => {
-  	if (this.state.selectedNumbers.indexOf(clickedNumber) >= 0) { return; }
+  	if (this.state.selectedNumbers.indexOf(clickedNumber) >= 0) {
+			return;
+		};
   	this.setState(prevState => ({
     answerIsCorrect: null,
     	selectedNumbers: prevState.selectedNumbers.concat(clickedNumber)
@@ -121,12 +123,13 @@ export default class Game extends React.Component {
         <hr/>
         <div className="row">
           <Stars numberOfStars={randomNumberOfStars}/>
-          <Button selectedNumbers={selectedNumbers}
-          				checkAnswer={this.checkAnswer}
-                  redraw={this.redraw}
-                  redraws={redraws}
-                  acceptAnswer={this.acceptAnswer}
-                  answerIsCorrect={answerIsCorrect}/>
+          <Button
+						selectedNumbers={selectedNumbers}
+    				checkAnswer={this.checkAnswer}
+            redraw={this.redraw}
+            redraws={redraws}
+            acceptAnswer={this.acceptAnswer}
+            answerIsCorrect={answerIsCorrect}/>
           <Answer
           	selectedNumbers={selectedNumbers}
             unselectNumber={this.unselectNumber}/>

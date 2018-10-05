@@ -1,7 +1,6 @@
 import React from 'react';
 import _ from 'lodash';
 
-
 const Numbers = (props) => {
 	const numberClassName = (number) => {
   	if(props.usedNumbers.indexOf(number) >= 0) {
@@ -16,9 +15,12 @@ const Numbers = (props) => {
   	<div className="card text-center">
   	  <div>
         {Numbers.list.map((number, i) =>
-        	<span key={i} className={numberClassName(number)}
+        	<span
+						key={i}
+						className={numberClassName(number)}
           	onClick={() => props.selectNumber(number)}>
-          {number}</span>
+          	{number}
+					</span>
         )}
   	  </div>
   	</div>
@@ -26,5 +28,4 @@ const Numbers = (props) => {
 };
 
 Numbers.list = _.range(1, 10);
-
 export default Numbers;
