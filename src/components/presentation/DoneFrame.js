@@ -8,10 +8,10 @@ const DoneFrame = (props) => {
       <button
         className="btn btn-secondary"
         onClick={props.resetGame}>
-      	Play Again!
+Play Again!
       </button>
     </div>
-  )
+  );
 };
 
 export default DoneFrame;
